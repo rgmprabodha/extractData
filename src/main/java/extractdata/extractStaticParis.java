@@ -23,8 +23,7 @@ public class extractStaticParis {
 	public static void main(String[] args) throws IOException, JSONException {
 		String url = "https://opendata.paris.fr/api/records/1.0/search/?dataset=velib-emplacement-des-stations";
 		JSONObject json = readJsonFromUrl(url);
-		JSONObject data = (JSONObject) json.get("records");
-		JSONArray stations = (JSONArray) data.get("stations");
+		JSONArray stations = (JSONArray) json.get("records");
 		processStations(stations);
 	}
 
@@ -51,7 +50,7 @@ public class extractStaticParis {
 
 	private static void processStations(JSONArray stations) {
 
-		String staticDBFile = "E:\\CPS2\\Year_2\\Semantic_Web\\Jena\\extractdata\\src\\main\\java\\extractdata\\staticDB";
+//		String staticDBFile = "E:\\CPS2\\Year_2\\Semantic_Web\\Jena\\extractdata\\src\\main\\java\\extractdata\\staticDB";
 		Model model = ModelFactory.createDefaultModel();
 
 		String exNS = "http://www.example.com/";
@@ -65,11 +64,13 @@ public class extractStaticParis {
 		for (Object station : stations) {
 
 			JSONObject stationJson = (JSONObject) station;
-			String ID = (String) stationJson.get("station_id");
-			String name = (String) stationJson.get("name");
-			double lat = (Double) stationJson.get("lat");
-			double lon = (Double) stationJson.get("lon");
-			int capacity =  (Integer) stationJson.get("capacity");
+			String ID = (String) stationJson.get("recordid");
+			JSONObject  obj = stationJson.getJSONObject("fields");
+			
+			String name = (String) obj.get("name");
+			double lat = (Double) obj.get("lat");
+			double lon = (Double) obj.get("lon");
+			int capacity =  (Integer) obj.get("capacity");
 
 			// Create Station Resource
 			Resource Station = model.createResource(stationURIPrefix + ID);
