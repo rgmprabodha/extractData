@@ -1,0 +1,117 @@
+@prefix ex:    <http://www.example.com/> .
+
+ex:station127  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "J. Marc" .
+
+ex:station102  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Chaléassiere" .
+
+ex:station108  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Peuple" .
+
+ex:station130  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Bicentenaire" .
+
+ex:station111  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Tardy" .
+
+ex:station117  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Chavanelle" .
+
+ex:station120  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "St Francois" .
+
+ex:station126  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Hôp. Nord" .
+
+ex:station101  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Châteaucreux" .
+
+ex:station107  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Clapier" .
+
+ex:station110  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "A. France" .
+
+ex:station116  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Villeboeuf" .
+
+ex:station125  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Soleil" .
+
+ex:station106  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Dorian" .
+
+ex:station115  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Congrès" .
+
+ex:station124  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Janin" .
+
+ex:station105  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Jaures" .
+
+ex:station114  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Bellevue" .
+
+ex:station123  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Marx" .
+
+ex:station129  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Roannelle" .
+
+ex:station104  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Jacquard" .
+
+ex:station113  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Centre 2" .
+
+ex:station119  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fourneyron" .
+
+ex:station122  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Terrasse" .
+
+ex:station128  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Technopole" .
+
+ex:station103  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Carnot" .
+
+ex:station109  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "A. Thomas" .
+
+ex:station112  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Tréfilerie" .
+
+ex:station118  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://xmlns.com/foaf/0.1/name>
+                "J. Moulin" .
