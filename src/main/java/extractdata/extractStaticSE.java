@@ -55,7 +55,7 @@ public class extractStaticSE {
 
 	private static void processStations(JSONArray stations) {
 
-		String staticDBFile = "E:\\CPS2\\Year_2\\Semantic_Web\\Jena\\extractdata\\src\\main\\java\\extractdata\\staticDB";
+		String staticDBFile = "E:\\CPS2\\Year_2\\Semantic_Web\\Jena\\extractdata\\src\\main\\java\\extractdata\\staticDB77";
 		Model model = ModelFactory.createDefaultModel();
 
 		String exNS = "http://www.example.com/";
@@ -84,19 +84,19 @@ public class extractStaticSE {
 			Station.addLiteral(model.createProperty(geoNS + "long"), lon);
 		}
 
-		model.write(System.out, "turtle");
-//		try {
-//
-//			if (!(new File(staticDBFile)).exists()) {
-//				model.write(new FileOutputStream(new File(staticDBFile)), "TURTLE");
-//			} else {
-//				// TODO append to file
-//			}
-//
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+//		model.write(System.out, "turtle");
+		try {
+
+			if (!(new File(staticDBFile)).exists()) {
+				model.write(new FileOutputStream(new File(staticDBFile)), "TURTLE");
+			} else {
+				// TODO append to file
+			}
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
