@@ -19,6 +19,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class ExtractStaticLyon {
+	final String CITYNAME = "LYON";
 	static JSONArray stations = new JSONArray();
 
 	public static void main(String[] args) throws IOException, JSONException {

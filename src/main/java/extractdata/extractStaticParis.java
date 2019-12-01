@@ -19,6 +19,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class extractStaticParis {
+	final String CITYNAME = "PARIS";
 
 	public static void main(String[] args) throws IOException, JSONException {
 		String url = "https://opendata.paris.fr/api/records/1.0/search/?dataset=velib-emplacement-des-stations";

@@ -31,7 +31,7 @@ import org.json.JSONObject;
 public class ExtractMain {
 
 	static Model model;
-	static String staticDBFile = "E:\\CPS2\\Year_2\\Semantic_Web\\Jena\\extractdata\\src\\main\\java\\extractdata\\staticDB28";
+	static String staticDBFile = "E:\\CPS2\\Year_2\\Semantic_Web\\Jena\\extractdata\\src\\main\\java\\extractdata\\statiyyyyy";
 	static String stationURIPrefix;
 
 	static String exNS;
