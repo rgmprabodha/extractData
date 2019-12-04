@@ -1,5 +1,6 @@
 package extractdata;
 
+//<<<<<<< HEAD
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -106,5 +107,8 @@ public class extractStaticSE {
 			e.printStackTrace();
 		}
 	}
+//=======
+//public class ExtractStaticSE {
+//>>>>>>> branch 'master' of https://github.com/rgmprabodha/extractData.git
 
 }

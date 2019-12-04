@@ -22,6 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class ExtractStaticLyon {
+	final String CITYNAME = "LYON";
 	static JSONArray stations = new JSONArray();
 
 	public static void main(String[] args) throws IOException, JSONException {
@@ -89,8 +90,8 @@ public class ExtractStaticLyon {
 		String exNS = "http://www.example.com/";
 		String geoNS = "https://www.w3.org/2003/01/geo/wgs84_pos#";
 
-		model.setNsPrefix("ex", exNS);
-		model.setNsPrefix("geo", geoNS);
+		extractStaticSE.model.setNsPrefix("ex", exNS);
+		extractStaticSE.model.setNsPrefix("geo", geoNS);
 
 		String stationURIPrefix = exNS + "Station:";
 
@@ -104,24 +105,24 @@ public class ExtractStaticLyon {
 			int capacity = (Integer) stationJson.get("capacity");
 
 			// Create Station Resource
-			Resource Station = model.createResource(stationURIPrefix + ID);
+			Resource Station = extractStaticSE.model.createResource(stationURIPrefix + ID);
 			Station.addProperty(RDF.type, RDFS.Class); // TODO station instance should be type of station class
 			Station.addProperty(FOAF.name, name);
 			Station.addProperty(RDF.value, String.valueOf(capacity));
-			Station.addLiteral(model.createProperty(geoNS + "lat"), lat);
-			Station.addLiteral(model.createProperty(geoNS + "long"), lon);
+			Station.addLiteral(extractStaticSE.model.createProperty(geoNS + "lat"), lat);
+			Station.addLiteral(extractStaticSE.model.createProperty(geoNS + "long"), lon);
 		}
 
-		model.write(System.out, "turtle");
+		extractStaticSE.model.write(System.out, "turtle");
 
 		try {
 
-			if (!(new File(staticDBFile)).exists()) {
-				model.write(new FileOutputStream(new File(staticDBFile)), "TURTLE");
+			if (!(new File(extractStaticSE.staticDBFile)).exists()) {
+				extractStaticSE.model.write(new FileOutputStream(new File(extractStaticSE.staticDBFile)), "TURTLE");
 			} else {
 				// TODO append to file
 				 //fos = new FileOutputStream(file,true);//这里构造方法多了一个参数true,表示在文件末尾追加写入
-				 model.write(new FileOutputStream(new File(staticDBFile),ture));
+				//extractStaticSE.model.write(new FileOutputStream(new File(extractStaticSE.staticDBFile),ture));
 			}
 
 		} catch (FileNotFoundException e) {

@@ -19,12 +19,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class extractStaticParis {
+	final String CITYNAME = "PARIS";
 
 	public static void main(String[] args) throws IOException, JSONException {
 		String url = "https://opendata.paris.fr/api/records/1.0/search/?dataset=velib-emplacement-des-stations";
 		JSONObject json = readJsonFromUrl(url);
-		JSONObject data = (JSONObject) json.get("records");
-		JSONArray stations = (JSONArray) data.get("stations");
+		JSONArray stations = (JSONArray) json.get("records");
 		processStations(stations);
 	}
 
@@ -51,33 +51,40 @@ public class extractStaticParis {
 
 	private static void processStations(JSONArray stations) {
 
-//		String staticDBFile = "C:\\Users\\roven\\git\\extractData\\src\\main\\java\\extractdata\\staticDB";
+//<<<<<<< HEAD
+////		String staticDBFile = "C:\\Users\\roven\\git\\extractData\\src\\main\\java\\extractdata\\staticDB";
+////		Model model = ModelFactory.createDefaultModel();
+//=======
+////		String staticDBFile = "E:\\CPS2\\Year_2\\Semantic_Web\\Jena\\extractdata\\src\\main\\java\\extractdata\\staticDB";
 //		Model model = ModelFactory.createDefaultModel();
+//>>>>>>> branch 'master' of https://github.com/rgmprabodha/extractData.git
+//
+//		String exNS = "http://www.example.com/";
+//		String geoNS = "https://www.w3.org/2003/01/geo/wgs84_pos#";
 
-		String exNS = "http://www.example.com/";
-		String geoNS = "https://www.w3.org/2003/01/geo/wgs84_pos#";
-
-		extractStaticSE.model.setNsPrefix("ex", exNS);
-		extractStaticSE.model.setNsPrefix("geo", geoNS);
+		extractStaticSE.model.setNsPrefix("ex", extractStaticSE.exNS);
+		extractStaticSE.model.setNsPrefix("geo", extractStaticSE.geoNS);
 		
-		String stationURIPrefix = exNS + "Station:";
+		String stationURIPrefix = extractStaticSE.exNS + "Station:";
 
 		for (Object station : stations) {
 
 			JSONObject stationJson = (JSONObject) station;
-			String ID = (String) stationJson.get("station_id");
-			String name = (String) stationJson.get("name");
-			double lat = (Double) stationJson.get("lat");
-			double lon = (Double) stationJson.get("lon");
-			int capacity =  (Integer) stationJson.get("capacity");
+			String ID = (String) stationJson.get("recordid");
+			JSONObject  obj = stationJson.getJSONObject("fields");
+			
+			String name = (String) obj.get("name");
+			double lat = (Double) obj.get("lat");
+			double lon = (Double) obj.get("lon");
+			int capacity =  (Integer) obj.get("capacity");
 
 			// Create Station Resource
 			Resource Station = extractStaticSE.model.createResource(stationURIPrefix + ID);
 			Station.addProperty(RDF.type, RDFS.Class); // TODO station instance should be type of station class
 			Station.addProperty(FOAF.name, name);
 			Station.addProperty(RDF.value, String.valueOf(capacity));
-			Station.addLiteral(extractStaticSE.model.createProperty(geoNS + "lat"), lat);
-			Station.addLiteral(extractStaticSE.model.createProperty(geoNS + "long"), lon);
+			Station.addLiteral(extractStaticSE.model.createProperty(extractStaticSE.geoNS + "lat"), lat);
+			Station.addLiteral(extractStaticSE.model.createProperty(extractStaticSE.geoNS + "long"), lon);
 		}
 
 		extractStaticSE.model.write(System.out, "turtle");

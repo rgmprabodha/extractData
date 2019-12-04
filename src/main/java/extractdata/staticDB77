@@ -1,0 +1,234 @@
+@prefix geo:   <https://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix ex:    <http://www.example.com/> .
+
+ex:Station:120  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "16" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "St Francois" ;
+        geo:lat   "45.439538"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.403407"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:126  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "32" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Hôp. Nord" ;
+        geo:lat   "45.479487"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.362541"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:101  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "32" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Châteaucreux" ;
+        geo:lat   "45.442972"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.398855"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:107  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "16" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Clapier" ;
+        geo:lat   "45.436903"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.378789"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:110  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "16" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "A. France" ;
+        geo:lat   "45.43065"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.389752"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:116  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "16" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Villeboeuf" ;
+        geo:lat   "45.431808"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.395127"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:125  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "16" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Soleil" ;
+        geo:lat   "45.450533"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.403566"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:106  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "32" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Dorian" ;
+        geo:lat   "45.43836"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.388435"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:115  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "24" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Congrès" ;
+        geo:lat   "45.426972"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.404048"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:124  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "16" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Janin" ;
+        geo:lat   "45.448458"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.39492"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:105  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "32" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Jaures" ;
+        geo:lat   "45.440725"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.387295"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:114  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "24" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Bellevue" ;
+        geo:lat   "45.415579"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.393322"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:123  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "16" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Marx" ;
+        geo:lat   "45.422732"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.409376"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:129  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "16" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Roannelle" ;
+        geo:lat   "45.4357171"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.3829931"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:104  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "12" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Jacquard" ;
+        geo:lat   "45.441888"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.382492"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:113  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "24" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Centre 2" ;
+        geo:lat   "45.42342"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.392292"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:119  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "24" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Fourneyron" ;
+        geo:lat   "45.4395"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.395669"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:122  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "16" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Terrasse" ;
+        geo:lat   "45.46502"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.37874"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:128  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "16" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Technopole" ;
+        geo:lat   "45.457"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.39241"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:103  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "24" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Carnot" ;
+        geo:lat   "45.447093"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.385487"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:109  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "16" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "A. Thomas" ;
+        geo:lat   "45.4328"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.388035"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:112  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "24" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Tréfilerie" ;
+        geo:lat   "45.427296"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.390669"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:118  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "16" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "J. Moulin" ;
+        geo:lat   "45.437404"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.392469"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:127  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "24" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "J. Marc" ;
+        geo:lat   "45.4732778"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.3665277"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:102  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "16" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Chaléassiere" ;
+        geo:lat   "45.453601"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.383062"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:108  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "32" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Peuple" ;
+        geo:lat   "45.436265"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.387539"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:130  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "16" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Bicentenaire" ;
+        geo:lat   "45.420286"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.392776"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:111  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "12" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Tardy" ;
+        geo:lat   "45.427396"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.386718"^^<http://www.w3.org/2001/XMLSchema#double> .
+
+ex:Station:117  a  <http://www.w3.org/2000/01/rdf-schema#Class> ;
+        <http://www.w3.org/1999/02/22-rdf-syntax-ns#value>
+                "24" ;
+        <http://xmlns.com/foaf/0.1/name>
+                "Chavanelle" ;
+        geo:lat   "45.435109"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        geo:long  "4.391962"^^<http://www.w3.org/2001/XMLSchema#double> .
