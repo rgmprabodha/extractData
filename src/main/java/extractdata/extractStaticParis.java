@@ -51,16 +51,21 @@ public class extractStaticParis {
 
 	private static void processStations(JSONArray stations) {
 
-//		String staticDBFile = "E:\\CPS2\\Year_2\\Semantic_Web\\Jena\\extractdata\\src\\main\\java\\extractdata\\staticDB";
-		Model model = ModelFactory.createDefaultModel();
+//<<<<<<< HEAD
+////		String staticDBFile = "C:\\Users\\roven\\git\\extractData\\src\\main\\java\\extractdata\\staticDB";
+////		Model model = ModelFactory.createDefaultModel();
+//=======
+////		String staticDBFile = "E:\\CPS2\\Year_2\\Semantic_Web\\Jena\\extractdata\\src\\main\\java\\extractdata\\staticDB";
+//		Model model = ModelFactory.createDefaultModel();
+//>>>>>>> branch 'master' of https://github.com/rgmprabodha/extractData.git
+//
+//		String exNS = "http://www.example.com/";
+//		String geoNS = "https://www.w3.org/2003/01/geo/wgs84_pos#";
 
-		String exNS = "http://www.example.com/";
-		String geoNS = "https://www.w3.org/2003/01/geo/wgs84_pos#";
-
-		model.setNsPrefix("ex", exNS);
-		model.setNsPrefix("geo", geoNS);
+		extractStaticSE.model.setNsPrefix("ex", extractStaticSE.exNS);
+		extractStaticSE.model.setNsPrefix("geo", extractStaticSE.geoNS);
 		
-		String stationURIPrefix = exNS + "Station:";
+		String stationURIPrefix = extractStaticSE.exNS + "Station:";
 
 		for (Object station : stations) {
 
@@ -74,15 +79,15 @@ public class extractStaticParis {
 			int capacity =  (Integer) obj.get("capacity");
 
 			// Create Station Resource
-			Resource Station = model.createResource(stationURIPrefix + ID);
+			Resource Station = extractStaticSE.model.createResource(stationURIPrefix + ID);
 			Station.addProperty(RDF.type, RDFS.Class); // TODO station instance should be type of station class
 			Station.addProperty(FOAF.name, name);
 			Station.addProperty(RDF.value, String.valueOf(capacity));
-			Station.addLiteral(model.createProperty(geoNS + "lat"), lat);
-			Station.addLiteral(model.createProperty(geoNS + "long"), lon);
+			Station.addLiteral(extractStaticSE.model.createProperty(extractStaticSE.geoNS + "lat"), lat);
+			Station.addLiteral(extractStaticSE.model.createProperty(extractStaticSE.geoNS + "long"), lon);
 		}
 
-		model.write(System.out, "turtle");
+		extractStaticSE.model.write(System.out, "turtle");
 //		try {
 //
 //			if (!(new File(staticDBFile)).exists()) {
