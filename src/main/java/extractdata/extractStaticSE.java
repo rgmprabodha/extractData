@@ -23,7 +23,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class extractStaticSE {
-
+	//these defines could be quote by other class
+	public static String staticDBFile = "C:\\Users\\roven\\git\\extractData\\src\\main\\java\\extractdata\\SE_DB";
+	public static Model model = ModelFactory.createDefaultModel();	
+	public static String exNS = "http://www.example.com/";
+	public static String geoNS = "https://www.w3.org/2003/01/geo/wgs84_pos#";
+	public static String stationURIPrefix = exNS + "Station:";
+	public static File SE_DB=new File(staticDBFile);
+	
 	public static void main(String[] args) throws IOException, JSONException {
 		String url = "https://saint-etienne-gbfs.klervi.net/gbfs/en/station_information.json";
 		JSONObject json = readJsonFromUrl(url);
@@ -55,16 +62,16 @@ public class extractStaticSE {
 
 	private static void processStations(JSONArray stations) {
 
-		String staticDBFile = "E:\\CPS2\\Year_2\\Semantic_Web\\Jena\\extractdata\\src\\main\\java\\extractdata\\staticDB";
-		Model model = ModelFactory.createDefaultModel();
+//		String staticDBFile = "C:\\Users\\roven\\git\\extractData\\src\\main\\java\\extractdata\\staticDB";
+//		Model model = ModelFactory.createDefaultModel();
 
-		String exNS = "http://www.example.com/";
-		String geoNS = "https://www.w3.org/2003/01/geo/wgs84_pos#";
+//		String exNS = "http://www.example.com/";
+//		String geoNS = "https://www.w3.org/2003/01/geo/wgs84_pos#";
 
 		model.setNsPrefix("ex", exNS);
 		model.setNsPrefix("geo", geoNS);
 		
-		String stationURIPrefix = exNS + "Station:";
+//		String stationURIPrefix = exNS + "Station:";
 
 		for (Object station : stations) {
 
@@ -75,7 +82,7 @@ public class extractStaticSE {
 			double lon = (Double) stationJson.get("lon");
 			int capacity =  (Integer) stationJson.get("capacity");
 
-			// Create Station Resource
+			// Create Station Resource 	
 			Resource Station = model.createResource(stationURIPrefix + ID);
 			Station.addProperty(RDF.type, RDFS.Class); // TODO station instance should be type of station class
 			Station.addProperty(FOAF.name, name);
@@ -84,19 +91,20 @@ public class extractStaticSE {
 			Station.addLiteral(model.createProperty(geoNS + "long"), lon);
 		}
 
-		model.write(System.out, "turtle");
-//		try {
-//
-//			if (!(new File(staticDBFile)).exists()) {
-//				model.write(new FileOutputStream(new File(staticDBFile)), "TURTLE");
-//			} else {
-//				// TODO append to file
-//			}
-//
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+//		model.write(System.out, "turtle");
+		try {
+
+			if (!(new File(staticDBFile)).exists()) {
+				model.write(new FileOutputStream(SE_DB), "TURTLE");
+				System.out.print("happy");
+			} else {
+				// TODO append to file
+			}
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

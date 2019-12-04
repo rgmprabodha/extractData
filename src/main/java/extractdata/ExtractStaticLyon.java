@@ -1,6 +1,9 @@
 package extractdata;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -77,52 +80,54 @@ public class ExtractStaticLyon {
 	}
 
 	private static void processStations() {
-//		System.out.println(stations);
+		System.out.println(stations);
 		System.out.println(stations.length());
 
-//		String staticDBFile = "E:\\CPS2\\Year_2\\Semantic_Web\\Jena\\extractdata\\src\\main\\java\\extractdata\\staticDB";
+//		String staticDBFile = "C:\\Users\\roven\\git\\extractData\\src\\main\\java\\extractdata\\staticDB";
 //		Model model = ModelFactory.createDefaultModel();
-//
-//		String exNS = "http://www.example.com/";
-//		String geoNS = "https://www.w3.org/2003/01/geo/wgs84_pos#";
-//
-//		model.setNsPrefix("ex", exNS);
-//		model.setNsPrefix("geo", geoNS);
-//
-//		String stationURIPrefix = exNS + "Station:";
-//
-//		for (Object station : stations) {
-//
-//			JSONObject stationJson = (JSONObject) station;
-//			String ID = (String) stationJson.get("station_id");
-//			String name = (String) stationJson.get("name");
-//			double lat = (Double) stationJson.get("lat");
-//			double lon = (Double) stationJson.get("lon");
-//			int capacity = (Integer) stationJson.get("capacity");
-//
-//			// Create Station Resource
-//			Resource Station = model.createResource(stationURIPrefix + ID);
-//			Station.addProperty(RDF.type, RDFS.Class); // TODO station instance should be type of station class
-//			Station.addProperty(FOAF.name, name);
-//			Station.addProperty(RDF.value, String.valueOf(capacity));
-//			Station.addLiteral(model.createProperty(geoNS + "lat"), lat);
-//			Station.addLiteral(model.createProperty(geoNS + "long"), lon);
-//		}
-//
-//		model.write(System.out, "turtle");
 
-//		try {
-//
-//			if (!(new File(staticDBFile)).exists()) {
-//				model.write(new FileOutputStream(new File(staticDBFile)), "TURTLE");
-//			} else {
-//				// TODO append to file
-//			}
-//
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		String exNS = "http://www.example.com/";
+		String geoNS = "https://www.w3.org/2003/01/geo/wgs84_pos#";
+
+		model.setNsPrefix("ex", exNS);
+		model.setNsPrefix("geo", geoNS);
+
+		String stationURIPrefix = exNS + "Station:";
+
+		for (Object station : stations) {
+
+			JSONObject stationJson = (JSONObject) station;
+			String ID = (String) stationJson.get("station_id");
+			String name = (String) stationJson.get("name");
+			double lat = (Double) stationJson.get("lat");
+			double lon = (Double) stationJson.get("lon");
+			int capacity = (Integer) stationJson.get("capacity");
+
+			// Create Station Resource
+			Resource Station = model.createResource(stationURIPrefix + ID);
+			Station.addProperty(RDF.type, RDFS.Class); // TODO station instance should be type of station class
+			Station.addProperty(FOAF.name, name);
+			Station.addProperty(RDF.value, String.valueOf(capacity));
+			Station.addLiteral(model.createProperty(geoNS + "lat"), lat);
+			Station.addLiteral(model.createProperty(geoNS + "long"), lon);
+		}
+
+		model.write(System.out, "turtle");
+
+		try {
+
+			if (!(new File(staticDBFile)).exists()) {
+				model.write(new FileOutputStream(new File(staticDBFile)), "TURTLE");
+			} else {
+				// TODO append to file
+				 //fos = new FileOutputStream(file,true);//这里构造方法多了一个参数true,表示在文件末尾追加写入
+				 model.write(new FileOutputStream(new File(staticDBFile),ture));
+			}
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
