@@ -12,10 +12,13 @@ public class StationClasses {
 	public static void main(String[] args) {
 		Model model = ModelFactory.createDefaultModel();
 
-		String countryURI = "http://www.example.com/country";
+		String countryURI = "https://schema.org/Country";
 		String cityURI = "http://schema.org/City";
-		String stationURI = "http://www.example.com/station";
-		String availabilityURI = "http://www.example.com/availability";
+		
+		String localNS = "http://localhost:3030/";
+		model.setNsPrefix("local", localNS);
+		String stationURI = localNS + "Station:";
+		String availabilityURI = localNS + "Availability:";
 
 		Resource Country = model.createResource(countryURI);
 		Resource City = model.createResource(cityURI);
@@ -25,6 +28,8 @@ public class StationClasses {
 		Property hasCity = model.createProperty("hasCity");
 		Property hasStation = model.createProperty("hasStation");
 		Property hasAvailability = model.createProperty("hasAvailability");
+		
+
 
 		Country.addProperty(hasCity, City);
 		Country.addProperty(RDF.type, RDFS.Class);
