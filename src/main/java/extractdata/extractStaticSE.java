@@ -13,7 +13,10 @@ import java.nio.charset.Charset;
 
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
+<<<<<<< HEAD
 import org.apache.jena.rdf.model.Property;
+=======
+>>>>>>> f859be532f5dab779e916ab129c56d96eabfaac9
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.sparql.vocabulary.FOAF;
 import org.apache.jena.vocabulary.RDF;
@@ -23,6 +26,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class extractStaticSE {
+<<<<<<< HEAD
+=======
+	// these defines could be quote by other class
+	public static String staticDBFile = "C:\\Users\\roven\\git\\extractData\\src\\main\\java\\extractdata\\SE_DB";
+	public static Model model = ModelFactory.createDefaultModel();
+	public static String exNS = "http://www.example.com/";
+	public static String geoNS = "https://www.w3.org/2003/01/geo/wgs84_pos#";
+	public static String stationURIPrefix = exNS + "Station:";
+	public static File SE_DB = new File(staticDBFile);
+>>>>>>> f859be532f5dab779e916ab129c56d96eabfaac9
 
 	public static void main(String[] args) throws IOException, JSONException {
 		String url = "https://saint-etienne-gbfs.klervi.net/gbfs/en/station_information.json";
@@ -55,6 +68,7 @@ public class extractStaticSE {
 
 	private static void processStations(JSONArray stations) {
 
+<<<<<<< HEAD
 		String staticDBFile = "E:\\CPS2\\Year_2\\Semantic_Web\\Jena\\extractdata\\src\\main\\java\\extractdata\\staticDB";
 		Model model = ModelFactory.createDefaultModel();
 
@@ -65,6 +79,18 @@ public class extractStaticSE {
 		model.setNsPrefix("geo", geoNS);
 		
 		String stationURIPrefix = exNS + "Station:";
+=======
+//		String staticDBFile = "C:\\Users\\roven\\git\\extractData\\src\\main\\java\\extractdata\\staticDB";
+//		Model model = ModelFactory.createDefaultModel();
+
+//		String exNS = "http://www.example.com/";
+//		String geoNS = "https://www.w3.org/2003/01/geo/wgs84_pos#";
+
+		model.setNsPrefix("ex", exNS);
+		model.setNsPrefix("geo", geoNS);
+
+//		String stationURIPrefix = exNS + "Station:";
+>>>>>>> f859be532f5dab779e916ab129c56d96eabfaac9
 
 		for (Object station : stations) {
 
@@ -73,7 +99,11 @@ public class extractStaticSE {
 			String name = (String) stationJson.get("name");
 			double lat = (Double) stationJson.get("lat");
 			double lon = (Double) stationJson.get("lon");
+<<<<<<< HEAD
 			int capacity =  (Integer) stationJson.get("capacity");
+=======
+			int capacity = (Integer) stationJson.get("capacity");
+>>>>>>> f859be532f5dab779e916ab129c56d96eabfaac9
 
 			// Create Station Resource
 			Resource Station = model.createResource(stationURIPrefix + ID);
@@ -84,6 +114,7 @@ public class extractStaticSE {
 			Station.addLiteral(model.createProperty(geoNS + "long"), lon);
 		}
 
+<<<<<<< HEAD
 		model.write(System.out, "turtle");
 //		try {
 //
@@ -99,4 +130,21 @@ public class extractStaticSE {
 //		}
 	}
 
+=======
+//		model.write(System.out, "turtle");
+		try {
+
+			if (!(new File(staticDBFile)).exists()) {
+				model.write(new FileOutputStream(SE_DB), "TURTLE");
+				System.out.print("happy");
+			} else {
+				// TODO append to file
+			}
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+>>>>>>> f859be532f5dab779e916ab129c56d96eabfaac9
 }
