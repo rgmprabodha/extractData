@@ -14,17 +14,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Process the Saint-Etienne JSON data
- * @return Saint-Etienne stations array
- * @param url
- */
+public class StaticParis {
 
-public class StaticSaintEtienne {
-	final String CITYNAME = "SAINT_ETIENNE";
-	static String url = "https://saint-etienne-gbfs.klervi.net/gbfs/en/station_information.json";
+	final String CITYNAME = "PARIS";
+	static String url = "https://opendata.paris.fr/api/records/1.0/search/?dataset=velib-emplacement-des-stations";
 	static List<Station> stationsList = new ArrayList<Station>();
-
+	
 	public List<Station> processData() throws JSONException, IOException {
 		JSONArray stations = readJsonFromUrl(url);
 		processStations(stations);
@@ -37,8 +32,7 @@ public class StaticSaintEtienne {
 			BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
 			String jsonText = readAll(rd);
 			JSONObject json = new JSONObject(jsonText);
-			JSONObject data = (JSONObject) json.get("data");
-			JSONArray stations = (JSONArray) data.get("stations");
+			JSONArray stations = (JSONArray) json.get("records");
 			return stations;
 		} finally {
 			is.close();
@@ -57,11 +51,14 @@ public class StaticSaintEtienne {
 	private static void processStations(JSONArray stations) {
 		for (Object station : stations) {
 			JSONObject stationJson = (JSONObject) station;
-			String ID = (String) stationJson.get("station_id");
-			String name = (String) stationJson.get("name");
-			double lat = (Double) stationJson.get("lat");
-			double lon = (Double) stationJson.get("lon");
-			int capacity =  (Integer) stationJson.get("capacity");
+			String ID = (String) stationJson.get("recordid");
+
+			JSONObject fileds = (JSONObject) stationJson.get("fields");
+			
+			String name = (String) fileds.get("name");
+			double lat = (Double) fileds.get("lat");
+			double lon = (Double) fileds.get("lon");
+			int capacity =  (Integer) fileds.get("capacity");
 
 			Station ss = new Station(ID, name, lat, lon, capacity);
 			stationsList.add(ss);
